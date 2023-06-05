@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <>
-      <h1>Footer</h1>
-    </>
+    <p className='py-2 text-sm text-center text-white bg-slate-900'>
+      {'Never give up! | All Rights Reserved.'}
+    </p>
   );
 }
