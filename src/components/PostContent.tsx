@@ -1,16 +1,19 @@
 import { Post, PostData } from '@/service/posts';
 import { AiTwotoneCalendar } from 'react-icons/ai';
+import MarkdownView from './MarkdownView';
 
 export default function PostContent({ post }: { post: PostData }) {
   const { title, description, date, path, content } = post;
   return (
-    <section>
-      <div>
+    <section className='flex flex-col p-4'>
+      <div className='flex items-center self-end text-sky-600'>
         <AiTwotoneCalendar />
-        <p>{date.toString()}</p>
+        <p className='ml-2 font-semibold'>{date.toString()}</p>
       </div>
-      <h1>{title}</h1>
-      <p>{description}</p>
+      <h1 className='text-4xl font-bold'>{title}</h1>
+      <p className='text-xl font-bold'>{description}</p>
+      <div className='mt-4 mb-8 border-2 w-44 border-sky-600' />
+      <MarkdownView content={content} />
     </section>
   );
 }
